@@ -7,67 +7,126 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 font-sans">
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 font-sans flex flex-col min-h-screen transition-colors duration-300">
 
-  <!-- Contact Section -->
-  <section id="contact-info" class="max-w-5xl mx-auto py-16 px-6">
-    <div class="text-center">
-      <h2 class="text-4xl font-bold mb-4">Contact</h2>
-      <!-- Centered divider line -->
-      <div class="flex justify-center mb-8">
-        <hr class="w-24 border-t-2 border-gray-600 dark:border-gray-300">
-      </div>
-      <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">
-        Feel free to reach out to me through the following platforms:
-      </p>
-    </div>
+  <!-- Header with Theme Toggle -->
+  <header class="w-full bg-gray-100 dark:bg-gray-800 p-4 flex justify-between items-center shadow-md">
+    <h1 class="text-xl font-bold">Contact Page</h1>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" aria-label="Toggle Dark Mode"
+      class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+      <span class="dark:hidden"><i class="fas fa-moon"></i></span>
+      <span class="hidden dark:inline"><i class="fas fa-sun"></i></span>
+    </button>
+  </header>
 
-    <!-- Contact info -->
-    <div class="flex flex-wrap justify-center gap-12 text-center">
-      <!-- Email -->
-      <div class="flex flex-col items-center">
-        <div class="bg-gray-200 dark:bg-gray-800 p-5 rounded-full mb-3">
-          <i class="fas fa-envelope text-gray-900 dark:text-gray-200 text-xl"></i>
+  <!-- Main Content Wrapper -->
+  <main class="flex-grow">
+    <!-- Contact Section -->
+    <section id="contact-info" class="max-w-5xl mx-auto py-16 px-6">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold mb-4">Contact</h2>
+        <!-- Centered divider line -->
+        <div class="flex justify-center mb-8">
+          <hr class="w-24 border-t-2 border-gray-600 dark:border-gray-300">
         </div>
-        <p class="font-semibold">Email</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">
+          Feel free to reach out to me through the following platforms:
+        </p>
+      </div>
+
+      <!-- Contact info -->
+      <div class="flex flex-wrap justify-center gap-12 text-center">
+        <!-- Email -->
+        <div class="flex flex-col items-center">
+          <div class="bg-gray-200 dark:bg-gray-800 p-5 rounded-full mb-3">
+            <i class="fas fa-envelope text-gray-900 dark:text-gray-200 text-2xl"></i>
+          </div>
+          <p class="font-semibold flex items-center gap-2">
+            <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i> Email
+          </p>
+          <a href="mailto:mumokisangau91@gmail.com"
+             class="text-blue-600 dark:text-blue-400 hover:underline">
+            mumokisangau91@gmail.com
+          </a>
+        </div>
+
+        <!-- GitHub -->
+        <div class="flex flex-col items-center">
+          <div class="bg-gray-200 dark:bg-gray-800 p-5 rounded-full mb-3">
+            <i class="fab fa-github text-gray-900 dark:text-gray-200 text-2xl"></i>
+          </div>
+          <p class="font-semibold flex items-center gap-2">
+            <i class="fab fa-github text-blue-600 dark:text-blue-400"></i> GitHub
+          </p>
+          <a href="https://github.com/caljan254"
+             class="text-blue-600 dark:text-blue-400 hover:underline">
+            caljan254
+          </a>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="flex flex-col items-center">
+          <div class="bg-gray-200 dark:bg-gray-800 p-5 rounded-full mb-3">
+            <i class="fab fa-linkedin text-gray-900 dark:text-gray-200 text-2xl"></i>
+          </div>
+          <p class="font-semibold flex items-center gap-2">
+            <i class="fab fa-linkedin text-blue-600 dark:text-blue-400"></i> LinkedIn
+          </p>
+          <a href="https://linkedin.com/in/aaamumo254"
+             class="text-blue-600 dark:text-blue-400 hover:underline">
+            aaamumo254
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back link -->
+    <div class="text-center mt-10 mb-6">
+      <a href="index.html" class="px-6 py-2 rounded-lg bg-gray-900 text-white dark:bg-gray-200 dark:text-gray-900 hover:opacity-80 transition">
+        ⬅ Back to Home
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8 text-center theme-transition no-print mt-auto">
+    <div class="max-w-6xl mx-auto flex flex-col items-center p-4">
+      <p>© 2025 SkySoft – Simple Apps, Big Impact</p>
+      <div class="flex space-x-4 mt-4">
         <a href="mailto:mumokisangau91@gmail.com"
-           class="text-blue-600 dark:text-blue-400 hover:underline">
-          mumokisangau91@gmail.com
-        </a>
-      </div>
-
-      <!-- GitHub -->
-      <div class="flex flex-col items-center">
-        <div class="bg-gray-200 dark:bg-gray-800 p-5 rounded-full mb-3">
-          <i class="fab fa-github text-gray-900 dark:text-gray-200 text-xl"></i>
-        </div>
-        <p class="font-semibold">GitHub</p>
+           class="hover:text-blue-400 transition-colors duration-300" aria-label="Email">
+           <i class="fas fa-envelope"></i></a>
         <a href="https://github.com/caljan254"
-           class="text-blue-600 dark:text-blue-400 hover:underline">
-          caljan254
-        </a>
-      </div>
-
-      <!-- LinkedIn -->
-      <div class="flex flex-col items-center">
-        <div class="bg-gray-200 dark:bg-gray-800 p-5 rounded-full mb-3">
-          <i class="fab fa-linkedin text-gray-900 dark:text-gray-200 text-xl"></i>
-        </div>
-        <p class="font-semibold">LinkedIn</p>
+           class="hover:text-blue-400 transition-colors duration-300" aria-label="GitHub">
+           <i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/aaamumo254"
-           class="text-blue-600 dark:text-blue-400 hover:underline">
-          aaamumo254
-        </a>
+           class="hover:text-blue-400 transition-colors duration-300" aria-label="LinkedIn">
+           <i class="fab fa-linkedin"></i></a>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- Back link -->
-  <div class="text-center mt-10 mb-6">
-    <a href="index.html" class="px-6 py-2 rounded-lg bg-gray-900 text-white dark:bg-gray-200 dark:text-gray-900 hover:opacity-80 transition">
-      ⬅ Back to Home
-    </a>
-  </div>
+  <!-- Dark Mode Script -->
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // check saved theme
+    if (localStorage.getItem('theme') === 'dark' || 
+       (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 
 </body>
 </html>
