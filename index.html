@@ -581,7 +581,7 @@
         <div id="contact-form"
             class="contact-form bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm mt-12 max-w-2xl mx-auto">
             <h3 class="font-semibold text-xl mb-4">Send a Message</h3>
-            <form id="message-form">
+            <form id="message-form" action="https://formsubmit.co/mumokisangau91@gmail.com" method="POST">
                 <div class="mb-4">
                     <label for="name" class="block mb-2">Name</label>
                     <input type="text" id="name" required
@@ -714,52 +714,52 @@
             observer.observe(skillsSection);
         }
 
-      // Contact form functionality
-const contactForm = document.getElementById('contact-form');
-const contactMeBtn = document.getElementById('contact-me-btn');
-const messageForm = document.getElementById('message-form');
+        // Contact form functionality
+        const contactForm = document.getElementById('contact-form');
+        const contactMeBtn = document.getElementById('contact-me-btn');
+        const messageForm = document.getElementById('message-form');
 
-// Initially hide the contact form
-contactForm.style.display = 'none';
+        // Initially hide the contact form
+        contactForm.style.display = 'none';
 
-contactMeBtn.addEventListener('click', () => {
-    // Scroll to contact form section
-    contactForm.scrollIntoView({ behavior: 'smooth' });
+        contactMeBtn.addEventListener('click', () => {
+            // Scroll to contact form section
+            contactForm.scrollIntoView({ behavior: 'smooth' });
 
-    // Show the contact form after a short delay for smooth scrolling
-    setTimeout(() => {
-        contactForm.style.display = 'block';
-        // Add class to trigger animation
-        setTimeout(() => {
-            contactForm.classList.add('expanded');
-            // Focus on the first form field for better UX
-            document.getElementById('name').focus();
-        }, 10);
-    }, 800);
-});
+            // Show the contact form after a short delay for smooth scrolling
+            setTimeout(() => {
+                contactForm.style.display = 'block';
+                // Add class to trigger animation
+                setTimeout(() => {
+                    contactForm.classList.add('expanded');
+                    // Focus on the first form field for better UX
+                    document.getElementById('name').focus();
+                }, 10);
+            }, 800);
+        });
 
-// Form submission handling
-if (messageForm) {
-    messageForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+        // Form submission handling
+        if (messageForm) {
+            messageForm.addEventListener('submit', (e) => {
+                e.preventDefault();
 
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
 
-        // In a real application, you would send this data to a server
-        // For now, we'll just show a confirmation and reset the form
-        alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-        messageForm.reset();
+                // In a real application, you would send this data to a server
+                // For now, we'll just show a confirmation and reset the form
+                alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+                messageForm.reset();
 
-        // Optional: Hide the form again
-        contactForm.classList.remove('expanded');
-        setTimeout(() => {
-            contactForm.style.display = 'none';
-        }, 500);
-    });
-}
+                // Optional: Hide the form again
+                contactForm.classList.remove('expanded');
+                setTimeout(() => {
+                    contactForm.style.display = 'none';
+                }, 500);
+            });
+        }
 
         // Back to top button functionality
         const backToTopButton = document.getElementById('back-to-top');
