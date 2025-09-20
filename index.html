@@ -739,29 +739,13 @@
             }, 800);
         });
 
-        // Form submission handling
-        if (messageForm) {
-            messageForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-
-                // In a real application, you would send this data to a server
-                // For now, we'll just show a confirmation and reset the form
-                alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-                messageForm.reset();
-
-                // Optional: Hide the form again
-                contactForm.classList.remove('expanded');
-                setTimeout(() => {
-                    contactForm.style.display = 'none';
-                }, 500);
-            });
-        }
-
+        // Form submission handling — now lets FormSubmit.co handle it!
+if (messageForm) {
+    messageForm.addEventListener('submit', () => {
+        // Optional: Show a quick thank you before redirect
+        alert("Message sent! Thank you — I’ll reply soon.");
+    });
+}
         // Back to top button functionality
         const backToTopButton = document.getElementById('back-to-top');
 
