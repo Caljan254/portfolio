@@ -631,6 +631,10 @@
     </button>
 
     <script>
+        // Hide form if user comes from thank-you page
+        if (document.referrer.includes('thanks.html')) {
+            contactForm.style.display = 'none';
+        }
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
@@ -740,12 +744,12 @@
         });
 
         // Form submission handling — now lets FormSubmit.co handle it!
-if (messageForm) {
-    messageForm.addEventListener('submit', () => {
-        // Optional: Show a quick thank you before redirect
-        alert("Message sent! Thank you — I’ll reply soon.");
-    });
-}
+        if (messageForm) {
+            messageForm.addEventListener('submit', () => {
+                // Optional: Show a quick thank you before redirect
+                alert("Message sent! Thank you — I’ll reply soon.");
+            });
+        }
         // Back to top button functionality
         const backToTopButton = document.getElementById('back-to-top');
 
