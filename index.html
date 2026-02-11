@@ -192,6 +192,90 @@
                 color: black !important;
             }
         }
+
+        /* Perfect circular image container */
+        .hero-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .circle-container {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 6px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .dark .circle-container {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .circle-container:hover {
+            transform: scale(1.02);
+        }
+
+        .circle-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: contain;
+            object-position: center;
+            background-color: white;
+            border: 4px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .dark .circle-image {
+            border-color: #1f2937;
+        }
+
+        .hero-image-badge {
+            position: absolute;
+            bottom: 15px;
+            right: calc(50% - 150px);
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            padding: 14px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .dark .hero-image-badge {
+            border-color: #1f2937;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .hero-image-badge:hover {
+            transform: rotate(15deg);
+        }
+
+        @media (max-width: 640px) {
+            .circle-container {
+                width: 240px;
+                height: 240px;
+            }
+
+            .hero-image-badge {
+                right: calc(50% - 120px);
+                bottom: 10px;
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 
@@ -227,7 +311,6 @@
                     class="hover:text-primary-500 transition-colors duration-300 focus-visible">Experience</a>
                 <a href="contact.html"
                     class="hover:text-primary-500 transition-colors duration-300 focus-visible">Contact</a>
-
 
                 <!-- Theme toggle button (after Contact) -->
                 <button id="theme-toggle" aria-label="Toggle dark mode"
@@ -271,18 +354,20 @@
     </header>
 
     <main id="main-content">
-        <!-- Hero Section -->
+        <!-- Hero Section - Perfect circular image container -->
         <section id="home" class="max-w-6xl mx-auto text-center py-16 px-6">
             <div class="animate-fade-in">
-                <div class="relative inline-block mb-6">
-                    <img src="images/profile.jpg" alt="Caleb Mumo Kisangau - Software Developer"
-                        class="w-40 h-40 mx-auto rounded-full shadow-lg mb-6 object-cover">
-                    <span class="absolute bottom-0 right-0 bg-primary-600 text-white p-2 rounded-full">
-                        <i class="fas fa-code text-sm" aria-hidden="true"></i>
+                <div class="hero-image-container">
+                    <div class="circle-container">
+                        <img src="images/CEO_caleb.png" alt="Caleb Mumo Kisangau - Software Developer"
+                            class="circle-image">
+                    </div>
+                    <span class="hero-image-badge">
+                        <i class="fas fa-code text-xl" aria-hidden="true"></i>
                     </span>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">Caleb Mumo Kisangau</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">Software Developer | Web & App Developer| IT
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">Software Developer | Web & App Developer | IT
                     Support & Systems Specialist</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <button id="contact-me-btn"
@@ -575,9 +660,6 @@
             </div>
         </section>
 
-
-
-
         <!-- Contact Form -->
         <div id="contact-form"
             class="contact-form bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm mt-12 max-w-2xl mx-auto">
@@ -629,17 +711,15 @@
                 <img src="https://img.icons8.com/ios-filled/50/1E90FF/linkedin.png" alt="LinkedIn" class="w-6 h-6">
             </a>
         </div>
-       <p class="mt-6 text-gray-400 text-sm max-w-3xl mx-auto leading-relaxed">
-  © 2025 <span class="font-semibold text-white">SkySoft</span> – 
-  Delivering innovative and reliable software solutions designed to drive efficiency, 
-  foster digital transformation, and create long-lasting impact. 
-  We are committed to excellence, scalability, and empowering individuals, businesses, 
-  and communities through technology.
-</p>
+        <p class="mt-6 text-gray-400 text-sm max-w-3xl mx-auto leading-relaxed">
+            © 2025 <span class="font-semibold text-white">SkySoft</span> –
+            Delivering innovative and reliable software solutions designed to drive efficiency,
+            foster digital transformation, and create long-lasting impact.
+            We are committed to excellence, scalability, and empowering individuals, businesses,
+            and communities through technology.
+        </p>
 
     </footer>
-
-
 
     <!-- Back to top button -->
     <button id="back-to-top"
@@ -650,9 +730,11 @@
 
     <script>
         // Hide form if user comes from thank-you page
+        const contactForm = document.getElementById('contact-form');
         if (document.referrer.includes('thanks.html')) {
             contactForm.style.display = 'none';
         }
+
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
@@ -738,7 +820,6 @@
         }
 
         // Contact form functionality
-        const contactForm = document.getElementById('contact-form');
         const contactMeBtn = document.getElementById('contact-me-btn');
         const messageForm = document.getElementById('message-form');
 
@@ -765,9 +846,10 @@
         if (messageForm) {
             messageForm.addEventListener('submit', () => {
                 // Optional: Show a quick thank you before redirect
-                alert("Message sent! Thank you — I’ll reply soon.");
+                alert("Message sent! Thank you — I'll reply soon.");
             });
         }
+
         // Back to top button functionality
         const backToTopButton = document.getElementById('back-to-top');
 
