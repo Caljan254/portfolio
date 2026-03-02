@@ -1,55 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You!</title>
-    <style>
-        body {
-            font-family: system-ui, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f9ff;
-            color: #1e40af;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | SkySoft Solutions</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#6366f1',
+                    }
+                }
+            }
         }
-        .container {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 1rem;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        a {
-            display: inline-block;
-            background: #3b82f6;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            background: #2563eb;
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <div class="container">
-        <h1>Thank You! 🙏</h1>
-        <p>Your message has been sent successfully.</p>
-        <p>I’ll get back to you as soon as possible.</p>
-        <a href="index.html">← Back to Portfolio</a>
+
+<body
+    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col items-center justify-center transition-colors duration-300">
+
+    <div class="container mx-auto max-w-2xl px-6 text-center space-y-12 py-20 reveal">
+        <div class="relative w-32 h-32 mx-auto">
+            <div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
+            <div
+                class="relative w-full h-full bg-primary text-white text-5xl rounded-full flex items-center justify-center shadow-2xl animate-bounce">
+                <i class="fas fa-check"></i>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <h1 class="text-6xl font-extrabold tracking-tight">Success!</h1>
+            <h2 class="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Thank you for reaching out.</h2>
+            <p class="text-lg text-gray-500 max-w-md mx-auto">Your message has been received! I'll review it and get
+                back to you within 24 hours.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-6 pt-10">
+            <a href="index.html"
+                class="px-10 py-4 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-bold rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto">
+                Back Home
+            </a>
+            <div class="h-10 w-px bg-gray-200 dark:bg-gray-800 hidden sm:block"></div>
+            <div class="flex space-x-6">
+                <a href="https://github.com/caljan254" target="_blank"
+                    class="text-gray-400 hover:text-primary transition-colors text-2xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/caleb-kisangau-713824350/" target="_blank"
+                    class="text-gray-400 hover:text-primary transition-colors text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
     </div>
+
+    <!-- Footer snippet -->
+    <footer data-component="footer"
+        class="fixed bottom-0 w-full opacity-50 pointer-events-none pb-8 text-xs reveal delay-200">
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./src/js/main.js"></script>
 </body>
+
 </html>

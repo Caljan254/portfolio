@@ -1,128 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Contact | Caleb Mumo Kisangau</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="./src/css/style.css">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            secondary: '#6366f1',
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body class="bg-gray-900 text-gray-200 font-sans flex flex-col min-h-screen transition-colors duration-300">
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-  <!-- Header with Theme Toggle -->
-  <header class="w-full bg-gray-800 dark:bg-gray-100 p-4 flex justify-between items-center shadow-md transition">
-    <h1 class="text-xl font-bold dark:text-gray-900">Contact Page</h1>
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" aria-label="Toggle Dark Mode"
-      class="p-2 rounded-full bg-gray-700 dark:bg-gray-300 hover:bg-gray-600 dark:hover:bg-gray-400 transition">
-      <span class="dark:hidden">🌙</span>
-      <span class="hidden dark:inline">☀️</span>
-    </button>
+  <!-- Header Component -->
+  <header data-component="header" class="fixed top-0 w-full z-50 glass shadow-sm transition-all duration-300">
   </header>
 
-  <!-- Main Content Wrapper -->
-  <main class="flex-grow">
-    <!-- Contact Section -->
-    <section id="contact-info" class="max-w-5xl mx-auto py-16 px-6">
-      <div class="text-center">
-        <h2 class="text-4xl font-bold mb-4">Contact</h2>
-        <!-- Centered divider line -->
-        <div class="flex justify-center mb-8">
-          <hr class="w-24 border-t-2 border-gray-300 dark:border-gray-600">
-        </div>
-        <p class="text-lg text-gray-400 dark:text-gray-600 mb-12">
-          Feel free to reach out to me through the following platforms by just clicking them:
-        </p>
+  <main class="pt-32 pb-20 px-6">
+    <div class="container mx-auto max-w-4xl">
+      <div class="text-center mb-16 reveal">
+        <h1 class="text-5xl font-extrabold mb-6 italic">Get In <span class="gradient-text">Touch</span></h1>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Have a project in mind or just want to say hi? I'd love to
+          hear from you. Drop me a message below!</p>
       </div>
 
-      
-   <!-- Social Links -->
-<div class="flex flex-wrap justify-center gap-12 mt-6">
+      <div class="grid md:grid-cols-5 gap-12 items-start">
+        <!-- Info -->
+        <div class="md:col-span-2 space-y-8 reveal">
+          <div class="space-y-6">
+            <div class="flex items-start gap-5">
+              <div
+                class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl shadow-lg">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Email</h4>
+                <p class="text-gray-500 text-sm">mumokisangau91@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5">
+              <div
+                class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary text-xl shadow-lg">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">LinkedIn</h4>
+                <p class="text-gray-500 text-sm">caleb-kisangau-713824350</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5">
+              <div
+                class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl shadow-lg">
+                <i class="fab fa-github"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">GitHub</h4>
+                <p class="text-gray-500 text-sm">@caljan254</p>
+              </div>
+            </div>
+          </div>
 
-  <!-- Email -->
-  <div class="flex flex-col items-center">
-    <a href="mailto:mumokisangau91@gmail.com" target="_blank" 
-       class="bg-gray-800 dark:bg-gray-200 p-3 rounded-full mb-2">
-      <img src="https://img.icons8.com/ios-filled/50/1E90FF/new-post.png" 
-           alt="Email" class="w-6 h-6">
-    </a>
-    <p class="font-semibold">Email</p>
-  </div>
+          <div
+            class="p-8 rounded-3xl bg-gradient-to-br from-primary to-secondary text-white shadow-xl shadow-primary/20 reveal delay-100">
+            <h4 class="text-xl font-bold mb-4">Why work with me?</h4>
+            <ul class="space-y-3 text-sm font-medium opacity-90">
+              <li><i class="fas fa-check-circle mr-2"></i> Scalable Architecture</li>
+              <li><i class="fas fa-check-circle mr-2"></i> User-Centric Design</li>
+              <li><i class="fas fa-check-circle mr-2"></i> 24/7 Technical Support</li>
+              <li><i class="fas fa-check-circle mr-2"></i> Creative Solutions</li>
+            </ul>
+          </div>
+        </div>
 
-  <!-- GitHub -->
-  <div class="flex flex-col items-center">
-    <a href="https://github.com/caljan254" target="_blank" 
-       class="bg-gray-800 dark:bg-gray-200 p-3 rounded-full mb-2">
-      <img src="https://img.icons8.com/ios-glyphs/50/1E90FF/github.png" 
-           alt="GitHub" class="w-6 h-6">
-    </a>
-    <p class="font-semibold">GitHub</p>
-  </div>
-
-  <!-- LinkedIn -->
-  <div class="flex flex-col items-center">
-    <a href="https://www.linkedin.com/in/caleb-kisangau-713824350/" target="_blank" 
-       class="bg-gray-800 dark:bg-gray-200 p-3 rounded-full mb-2">
-      <img src="https://img.icons8.com/ios-filled/50/1E90FF/linkedin.png" 
-           alt="LinkedIn" class="w-6 h-6">
-    </a>
-    <p class="font-semibold">LinkedIn</p>
-  </div>
-
-</div>
-
-
-    <!-- Back link -->
-    <div class="text-center mt-10 mb-6">
-      <a href="index.html"
-        class="px-6 py-2 rounded-lg bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-200 hover:opacity-80 transition">
-        ⬅ Back to Home
-      </a>
+        <!-- Form -->
+        <div
+          class="md:col-span-3 bg-white dark:bg-gray-800 p-8 md:p-10 rounded-3xl shadow-2xl shadow-gray-200 dark:shadow-none reveal delay-100">
+          <form action="https://formsubmit.co/mumokisangau91@gmail.com" method="POST" class="space-y-6">
+            <input type="hidden" name="_next" value="https://caljan254.github.io/thanks.html">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Name</label>
+                <input type="text" name="name" required
+                  class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all">
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Subject</label>
+                <input type="text" name="subject" required
+                  class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all">
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Email Address</label>
+              <input type="email" name="email" required
+                class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all">
+            </div>
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Message</label>
+              <textarea name="message" rows="5" required
+                class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl shadow-lg shadow-primary/30 transition-all duration-300 transform hover:-translate-y-1">
+              Send Message <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-black dark:bg-gray-100 text-white dark:text-gray-900 py-8 text-center mt-auto">
-   <p class="mt-6 text-gray-400 text-sm max-w-3xl mx-auto leading-relaxed">
-  © 2025 <span class="font-semibold text-white">SkySoft</span> – 
-  Delivering innovative and reliable software solutions designed to drive efficiency, 
-  foster digital transformation, and create long-lasting impact. 
-  We are committed to excellence, scalability, and empowering individuals, businesses, 
-  and communities through technology.
-</p>
-
+  <!-- Footer Component -->
+  <footer data-component="footer" class="bg-gray-900 border-t border-gray-800">
   </footer>
 
-  <!-- Dark Mode Script -->
-  <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-
-    // check saved theme or default to dark
-    if (localStorage.getItem('theme') === 'dark' ||
-      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      html.classList.add('dark');
-      document.body.classList.add('bg-gray-900', 'text-gray-200');
-    } else {
-      html.classList.remove('dark');
-      document.body.classList.add('bg-white', 'text-gray-900');
-    }
-
-    themeToggle.addEventListener('click', () => {
-      html.classList.toggle('dark');
-      if (html.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-        document.body.classList.remove('bg-white', 'text-gray-900');
-        document.body.classList.add('bg-gray-900', 'text-gray-200');
-      } else {
-        localStorage.setItem('theme', 'light');
-        document.body.classList.remove('bg-gray-900', 'text-gray-200');
-        document.body.classList.add('bg-white', 'text-gray-900');
-      }
-    });
-  </script>
-
+  <!-- Scripts -->
+  <script src="./src/js/main.js"></script>
 </body>
 
 </html>

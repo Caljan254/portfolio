@@ -1,0 +1,17 @@
+{
+  "name": "caleb-portfolio",
+  "version": "1.0.0",
+  "description": "Caleb Mumo Kisangau | Portfolio - SkySoft Solutions",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "portfolio",
+    "skysoft",
+    "caleb-mumo"
+  ],
+  "author": "Caleb Mumo Kisangau",
+  "license": "MIT"
+}
