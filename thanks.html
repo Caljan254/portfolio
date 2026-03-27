@@ -22,8 +22,18 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2563eb',
-                        secondary: '#6366f1',
+                        primary: {
+                            DEFAULT: '#FFD700', // Gold
+                            light: '#FFE033',
+                            dark: '#B8860B',
+                        },
+                        navy: {
+                            900: '#0A1929',
+                            800: '#081421',
+                            700: '#06101a',
+                            DEFAULT: '#0A1929',
+                        },
+                        accent: '#FFD700',
                     }
                 }
             }
@@ -32,7 +42,10 @@
 </head>
 
 <body
-    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col items-center justify-center transition-colors duration-300">
+    class="bg-navy-900 text-white min-h-screen flex flex-col items-center justify-center transition-colors duration-300">
+
+    <!-- Animated Mesh Background -->
+    <div class="mesh-bg"></div>
 
     <div class="container mx-auto max-w-2xl px-6 text-center space-y-12 py-20 reveal">
         <div class="relative w-32 h-32 mx-auto">
@@ -76,6 +89,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="./src/js/ai-background.js"></script>
     <script src="./src/js/main.js"></script>
 </body>
 

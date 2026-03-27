@@ -17,113 +17,209 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="./src/css/style.css">
 
-  <!-- Tailwind Config -->
+  <!-- Tailwind Config with Navy & Gold Theme -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            primary: '#2563eb',
-            secondary: '#6366f1',
+            primary: {
+              DEFAULT: '#FFD700', // Gold
+              light: '#FFE033',
+              dark: '#B8860B',
+            },
+            navy: {
+              900: '#0A1929',
+              800: '#081421',
+              700: '#06101a',
+              DEFAULT: '#0A1929',
+            },
+            accent: '#FFD700',
           }
         }
       }
     }
   </script>
+
+  <style>
+    /* Custom styles for the Navy & Gold theme */
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FFD700 0%, #FFB347 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass {
+      background: rgba(10, 25, 41, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    }
+
+    .reveal {
+      opacity: 0;
+      animation: slideUp 0.6s ease-out forwards;
+    }
+
+    @keyframes slideUp {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .reveal.delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .reveal.delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .reveal.delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0A1929;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #FFD700;
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #CCAC00;
+    }
+
+    /* Form focus styles */
+    input:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+    }
+
+    /* Button hover effect */
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(255, 215, 0, 0.3);
+    }
+  </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body
+  class="bg-navy-900 text-white min-h-screen flex flex-col items-center justify-center transition-colors duration-300">
+
+  <!-- Animated Mesh Background -->
+  <div class="mesh-bg"></div>
 
   <!-- Header Component -->
-  <header data-component="header" class="fixed top-0 w-full z-50 glass shadow-sm transition-all duration-300">
+  <header data-component="header" class="fixed top-0 w-full z-50 transition-all duration-300" style="background: #080808; border-bottom: 1px solid rgba(255,215,0,0.15); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
   </header>
 
   <main class="pt-32 pb-20 px-6">
     <div class="container mx-auto max-w-4xl">
       <div class="text-center mb-16 reveal">
         <h1 class="text-5xl font-extrabold mb-6 italic">Get In <span class="gradient-text">Touch</span></h1>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Have a project in mind or just want to say hi? I'd love to
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto">Have a project in mind or just want to say hi? I'd love to
           hear from you. Drop me a message below!</p>
       </div>
 
       <div class="grid md:grid-cols-5 gap-12 items-start">
-        <!-- Info -->
+        <!-- Info Section with Navy & Gold Theme -->
         <div class="md:col-span-2 space-y-8 reveal">
           <div class="space-y-6">
-            <div class="flex items-start gap-5">
+            <div class="flex items-start gap-5 group">
               <div
-                class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl shadow-lg">
+                class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl shadow-lg group-hover:bg-primary group-hover:text-navy-900 transition-all duration-300">
                 <i class="fas fa-envelope"></i>
               </div>
               <div>
-                <h4 class="font-bold">Email</h4>
-                <p class="text-gray-500 text-sm">mumokisangau91@gmail.com</p>
+                <h4 class="font-bold text-primary">Email</h4>
+                <p class="text-gray-300 text-sm">mumokisangau91@gmail.com</p>
               </div>
             </div>
-            <div class="flex items-start gap-5">
+            <div class="flex items-start gap-5 group">
               <div
-                class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary text-xl shadow-lg">
+                class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl shadow-lg group-hover:bg-primary group-hover:text-navy-900 transition-all duration-300">
                 <i class="fab fa-linkedin"></i>
               </div>
               <div>
-                <h4 class="font-bold">LinkedIn</h4>
-                <p class="text-gray-500 text-sm">caleb-kisangau-713824350</p>
+                <h4 class="font-bold text-primary">LinkedIn</h4>
+                <p class="text-gray-300 text-sm">caleb-kisangau-713824350</p>
               </div>
             </div>
-            <div class="flex items-start gap-5">
-              <div
-                class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl shadow-lg">
-                <i class="fab fa-github"></i>
-              </div>
+            <div class="flex items-start gap-5 group">
+
               <div>
-                <h4 class="font-bold">GitHub</h4>
-                <p class="text-gray-500 text-sm">@caljan254</p>
+
               </div>
             </div>
           </div>
 
+          <!-- Gold Gradient Card -->
           <div
-            class="p-8 rounded-3xl bg-gradient-to-br from-primary to-secondary text-white shadow-xl shadow-primary/20 reveal delay-100">
+            class="p-8 rounded-3xl bg-gradient-to-br from-primary to-primary-dark text-navy-900 shadow-xl shadow-primary/20 reveal delay-100">
             <h4 class="text-xl font-bold mb-4">Why work with me?</h4>
-            <ul class="space-y-3 text-sm font-medium opacity-90">
-              <li><i class="fas fa-check-circle mr-2"></i> Scalable Architecture</li>
-              <li><i class="fas fa-check-circle mr-2"></i> User-Centric Design</li>
-              <li><i class="fas fa-check-circle mr-2"></i> 24/7 Technical Support</li>
-              <li><i class="fas fa-check-circle mr-2"></i> Creative Solutions</li>
+            <ul class="space-y-3 text-sm font-medium">
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-navy-900"></i> Scalable Architecture
+              </li>
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-navy-900"></i> User-Centric Design
+              </li>
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-navy-900"></i> 24/7 Technical
+                Support
+              </li>
+              <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-navy-900"></i> Creative Solutions
+              </li>
             </ul>
           </div>
         </div>
 
-        <!-- Form -->
+        <!-- Form Section with Navy Card & Gold Accents -->
         <div
-          class="md:col-span-3 bg-white dark:bg-gray-800 p-8 md:p-10 rounded-3xl shadow-2xl shadow-gray-200 dark:shadow-none reveal delay-100">
+          class="md:col-span-3 bg-navy-800/50 backdrop-blur-sm p-8 md:p-10 rounded-3xl shadow-2xl border border-primary/20 reveal delay-100">
           <form action="https://formsubmit.co/mumokisangau91@gmail.com" method="POST" class="space-y-6">
             <input type="hidden" name="_next" value="https://caljan254.github.io/thanks.html">
             <div class="grid grid-cols-2 gap-6">
               <div class="space-y-2">
-                <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Name</label>
+                <label class="text-xs font-bold uppercase tracking-widest text-primary">Name</label>
                 <input type="text" name="name" required
-                  class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all">
+                  class="w-full bg-navy-700/50 border border-primary/20 rounded-xl px-4 py-3 text-gray-100 focus:border-primary focus:ring-primary/50 transition-all">
               </div>
               <div class="space-y-2">
-                <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Subject</label>
+                <label class="text-xs font-bold uppercase tracking-widest text-primary">Subject</label>
                 <input type="text" name="subject" required
-                  class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all">
+                  class="w-full bg-navy-700/50 border border-primary/20 rounded-xl px-4 py-3 text-gray-100 focus:border-primary focus:ring-primary/50 transition-all">
               </div>
             </div>
             <div class="space-y-2">
-              <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Email Address</label>
+              <label class="text-xs font-bold uppercase tracking-widest text-primary">Email Address</label>
               <input type="email" name="email" required
-                class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all">
+                class="w-full bg-navy-700/50 border border-primary/20 rounded-xl px-4 py-3 text-gray-100 focus:border-primary focus:ring-primary/50 transition-all">
             </div>
             <div class="space-y-2">
-              <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Message</label>
+              <label class="text-xs font-bold uppercase tracking-widest text-primary">Message</label>
               <textarea name="message" rows="5" required
-                class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary transition-all"></textarea>
+                class="w-full bg-navy-700/50 border border-primary/20 rounded-xl px-4 py-3 text-gray-100 focus:border-primary focus:ring-primary/50 transition-all"></textarea>
             </div>
             <button type="submit"
-              class="w-full py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl shadow-lg shadow-primary/30 transition-all duration-300 transform hover:-translate-y-1">
+              class="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-navy-900 shadow-primary/30 hover:shadow-primary/50">
               Send Message <i class="fas fa-paper-plane ml-2"></i>
             </button>
           </form>
@@ -132,11 +228,15 @@
     </div>
   </main>
 
-  <!-- Footer Component -->
-  <footer data-component="footer" class="bg-gray-900 border-t border-gray-800">
+  <!-- Footer Component with Navy Theme -->
+  <footer data-component="footer" style="background: #080808; border-top: 1px solid rgba(255,215,0,0.15); margin-top: 5rem;">
+    <div class="container mx-auto px-6 py-8 text-center">
+      <p class="text-gray-400 text-sm">© 2024 Caleb Mumo Kisangau. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="./src/js/ai-background.js"></script>
   <script src="./src/js/main.js"></script>
 </body>
 

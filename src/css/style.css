@@ -1,36 +1,91 @@
 :root {
-  --primary-hsl: 221, 83%, 53%;
-  --primary: hsl(var(--primary-hsl));
-  --primary-dark: hsl(221, 83%, 43%);
-  --secondary: #6366f1;
-  --accent: #f43f5e;
-  --bg-light: #f8fafc;
-  --bg-dark: #0f172a;
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-bg-dark: rgba(15, 23, 42, 0.7);
-}
-
-.dark {
-  --bg-surface: #1e293b;
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
+  --primary: #FFD700;
+  --primary-dark: #B8860B;
+  --secondary: #FFA500;
+  --accent: #FFD700;
+  --bg-dark: #0A1929;
+  --bg-navy: #0A1929;
+  --bg-header: #080808;         /* Deep Charcoal — header */
+  --bg-footer: #040E17;         /* Petroleum Teal-Black — footer */
+  --glass-bg: rgba(8, 20, 33, 0.4);
+  --glass-bg-dark: rgba(8, 20, 33, 0.4);
+  --text-main: #F5F7FA;
+  --text-white: #FFFFFF;
+  --bg-surface: #081421;
+  --border-gold: rgba(255, 215, 0, 0.15);
+  --glow-gold: rgba(255, 215, 0, 0.3);
 }
 
 body {
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-navy);
+  overflow-x: hidden;
+  /* Sticky footer: body fills full viewport height */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Main content grows to push footer to the bottom */
+body > main,
+body > #main-content {
+  flex: 1 0 auto;
+}
+
+/* Footer never shrinks */
+body > footer {
+  flex-shrink: 0;
+}
+
+/* AI Canvas Background */
+#ai-bg-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure all direct body children are above the canvas — but NOT the header */
+body > *:not(#ai-bg-canvas):not(header) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── STICKY HEADER — never moves, always on top ── */
+header[data-component="header"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: #080808 !important;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+/* ── FOOTER — same charcoal as header for visual symmetry ── */
+footer[data-component="footer"] {
+  background: #080808 !important;
+  border-top: 1px solid rgba(255, 215, 0, 0.15) !important;
+}
+
+/* Legacy mesh-bg fallback (hidden now) */
+.mesh-bg { display: none; }
 
 /* Glassmorphism */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 215, 0, 0.12);
 }
 
 .dark .glass {
   background: var(--glass-bg-dark);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.08);
 }
 
 /* Custom animations */
@@ -80,20 +135,21 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(10, 25, 41, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: rgba(255, 215, 0, 0.5);
   border-radius: 4px;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: #334155;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.8);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+/* Section transparency — let AI bg show through */
+section {
+  background: transparent !important;
 }
 /* Nav Links */
 .nav-link {
@@ -149,16 +205,17 @@ html {
   align-items: center;
   justify-content: center;
   border-radius: 0.75rem;
-  background-color: #1f2937; /* gray-800 */
+  background-color: var(--bg-surface);
   color: #9ca3af; /* gray-400 */
+  border: 1px solid var(--border-gold);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon:hover {
   background-color: var(--primary);
-  color: #ffffff;
+  color: var(--bg-navy);
   transform: translateY(-4px) scale(1.1);
-  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 10px 15px -3px var(--glow-gold);
 }
 
 .footer-link {

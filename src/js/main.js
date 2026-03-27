@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   initAnimations();
   initSkillBars();
   initLazyLoading();
-  initBackToTop();
   updateActiveLink(); // Initial check
 });
 
@@ -146,10 +145,24 @@ const initAnimations = () => {
 // Skill Bar Activation
 const initSkillBars = () => {
   const section = document.getElementById('skills');
-  if(!section) return;
+  if (!section) return;
+
+  // Build skill bar HTML from data attributes
+  section.querySelectorAll('.skill-item[data-skill]').forEach(item => {
+    const skill = item.getAttribute('data-skill');
+    const pct   = item.getAttribute('data-pct') || '80';
+    item.innerHTML = `
+      <div class="flex justify-between text-xs font-semibold text-gray-400 mb-1.5">
+        <span class="text-gray-300">${skill}</span>
+        <span class="text-primary">${pct}%</span>
+      </div>
+      <div class="h-1.5 bg-navy-900/60 rounded-full overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-primary to-primary-dark skill-bar-inner rounded-full" style="width:0%" data-width="${pct}%"></div>
+      </div>`;
+  });
 
   const observer = new IntersectionObserver((entries) => {
-    if(entries[0].isIntersecting) {
+    if (entries[0].isIntersecting) {
       section.querySelectorAll('.skill-bar-inner').forEach(bar => {
         bar.style.width = bar.getAttribute('data-width') || '0%';
       });
@@ -167,22 +180,4 @@ const initLazyLoading = () => {
   });
 };
 
-// Back to Top functionality
-const initBackToTop = () => {
-  const btn = document.getElementById('back-to-top');
-  if(!btn) return;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-      btn.classList.add('visible', 'opacity-100');
-      btn.classList.remove('invisible', 'opacity-0');
-    } else {
-      btn.classList.remove('visible', 'opacity-100');
-      btn.classList.add('invisible', 'opacity-0');
-    }
-  });
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-};
